@@ -3,29 +3,10 @@
 
 using namespace std;
 
-int count(int data[], int idx)
+int count(int data[], int n)
 {
-	int count = 0, same = 0;
-	set<int> mySet;
-	for (int i = 0; i < idx; i++)
-	{
-		same = 0;
-		for (int j = i; j < idx; j++)
-		{
-			if(data[j] == data[i])
-			{
-				same++;
-			}
-		}
-
-		if(same == 1)
-		{
-			mySet.insert(data[i]);
-			count++;
-		}
-	}
-
-	return count;
+	set<int> mySet (data, data + n);
+	return mySet.size();
 }
 
 int main()
